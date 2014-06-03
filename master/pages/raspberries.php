@@ -17,12 +17,19 @@ if (sizeof($berries )>0) {
 			$barray=explode(".", $berries[$i]);
 			$medata = explode("\n", file_get_contents($dir."/".$berries[$i]));
 			echo "<tr>";
-			echo "	<td>".strtoupper($barray[0]).'</td><td>'.$medata[2].'</td><td>'.$medata[1].'</td>';
+			echo "	<td class='clickableRow' href='ui.php?id=".$barray[0]."'>".strtoupper($barray[0]).'</a></td><td>'.$medata[2].'</td><td>'.$medata[1].'</td>';
 			echo "</tr>";
 		}
 	}
 }
 ?>
 </table>
+<script type="text/javascript">
+$( document ).ready(function() {
+ 	$(".clickableRow").click(function() {
+            window.document.location = $(this).attr("href");
+    });
+});
+</script>
 </div>
 </p>

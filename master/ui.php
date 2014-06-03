@@ -69,13 +69,23 @@
                     <div class="mobile">Master</div>
   			  </div>
 			  <div class="menu-items">
+        <?php
+          if(isset($_REQUEST['id'])) {
+            echo '<a href="pages/berry.php?id='.$_REQUEST['id'].'" class="menuitem bigpage">
+            <i class="icon-th-list"></i>
+            <div class="menu-title">Berry '.$_REQUEST['id'].'</div>
+          </a>';
+            
+          }
+          ?>
 <!-- ========  Copy this block for add new menu item: ======== -->
                   <!--Start block-->
           <a href="pages/master.php" class="menuitem bigpage">
 					  <i class="icon-list-alt"></i>
 					  <div class="menu-title">Master</div>
 				  </a>
-                  <!--end-->
+          
+          <!--end-->
 				  <a href="pages/raspberries.php" class="menuitem bigpage">
 					  <i class="icon-th"></i>
 					  <div class="menu-title">Raspberries</div>
